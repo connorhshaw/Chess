@@ -14,6 +14,7 @@ public class ChessApplication {
     private static void startApp(){
 
         ChessGame chessGame = new ChessGame();
+        chessGame.start();
 
 
     }

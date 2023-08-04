@@ -12,7 +12,7 @@ public class Piece {
     private int column;
     private Colour colour;
 
-    protected Point square;
+    protected Point square, lastSquare;
     protected ChessBoard chessBoard;
 
     protected String piece;
@@ -22,6 +22,7 @@ public class Piece {
         this.column = column;
         this.colour = colour;
         this.square = new Point(column, row);
+        this.lastSquare = square;
         this.chessBoard = chessBoard;
     }
 
@@ -34,7 +35,12 @@ public class Piece {
     }
 
     public void move(Point square){
+        lastSquare = this.square;
         this.square = square;
+    }
+
+    public void undoMove(){
+        this.square = lastSquare;
     }
 
     protected ArrayList<Point> validMovesInDiagonal(int xDir, int yDir, int distX, int distY, boolean limited){
@@ -190,4 +196,6 @@ public class Piece {
     public int getColumn() {
         return square.x;
     }
+
+
 }

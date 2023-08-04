@@ -21,7 +21,9 @@ public class HumanPlayer implements Player {
 
     @Override
     public void makeMove(Piece piece, Point square) {
-        System.out.println("make move to "+square.toString());
+        // for each move
+        // if move is in set of future moves that wouldnt allow check
+        // allow move
         chessGame.addMove(piece, square);
         chessBoard.setSelectedPiece(null);
     }

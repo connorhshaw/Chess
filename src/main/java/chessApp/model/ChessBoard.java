@@ -78,7 +78,30 @@ public class ChessBoard {
         return selectedPiece;
     }
 
+    public void addPiece(Piece piece){
+        pieces.add(piece);
+    }
+
     public void setSelectedPiece(Piece selectedPiece) {
         this.selectedPiece = selectedPiece;
+    }
+
+    public Piece getKing(Colour colour){
+        for (Piece piece:
+        getColouredPieces(colour)){
+            if (piece.getPiece().equals("king"))
+                return piece;
+        }
+        return null;
+    }
+
+    public ArrayList<Point> getAllAvailableMoves(Colour colour){
+        ArrayList<Point> availableMoves = new ArrayList<>();
+
+        for (Piece piece:
+        getColouredPieces(colour)){
+            availableMoves.addAll(piece.validMoves());
+        }
+        return availableMoves;
     }
 }
