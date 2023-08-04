@@ -2,6 +2,8 @@
 
 This is a java-based chess game built with a GUI, graphics and basic game funcitonality. The purpose was to demonstrate object oriented concepts which is shown in the Piece and Player classes. The MVC design was used, and so Model, View and Controller all handle separate parts of this application.
 
+Before beginning this project I created a UML diagram to give the project some structure. The eventual structure resembles this initial plan, however the class interactions evolved over the course of the project. This was a great way to learn about design concepts and planning, and was a good learning opportunity doing this same exercise in future.
+
 Features I would like to add in future:
 - Move recording
 - Position upload/download to add puzzle functionality
